@@ -11,6 +11,14 @@ class LoginViewModel: ObservableObject{
     
     @Published var authenticated = 0
     
+    init(){
+        if let session = UserDefaults.standard.object(forKey: "session") as? Int{
+            authenticated = session
+        }else{
+            authenticated = 0
+        }
+    }
+    
     func login(email: String, password: String){
         
         guard let url = URL(string: "https://reqres.in/api/login") else { return }
@@ -33,6 +41,7 @@ class LoginViewModel: ObservableObject{
                 if !datos.token.isEmpty{
                     DispatchQueue.main.async {
                         self.authenticated = 1
+                        UserDefaults.standard.setValue(1, forKey: "session")
                         print("Token devuelto: \(datos.token)")
                     }
                 }
