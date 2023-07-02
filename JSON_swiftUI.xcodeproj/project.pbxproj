@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		559855A02A4FDF400031F06F /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5598559F2A4FDF400031F06F /* UsersModel.swift */; };
+		559855A42A4FE0070031F06F /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559855A32A4FE0070031F06F /* UsersViewModel.swift */; };
 		55A4EB132A40B2E20092A7AD /* JSON_swiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A4EB122A40B2E20092A7AD /* JSON_swiftUIApp.swift */; };
 		55A4EB152A40B2E20092A7AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A4EB142A40B2E20092A7AD /* ContentView.swift */; };
 		55A4EB172A40B2E40092A7AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A4EB162A40B2E40092A7AD /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5598559F2A4FDF400031F06F /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
+		559855A32A4FE0070031F06F /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		55A4EB0F2A40B2E20092A7AD /* JSON_swiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSON_swiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A4EB122A40B2E20092A7AD /* JSON_swiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON_swiftUIApp.swift; sourceTree = "<group>"; };
 		55A4EB142A40B2E20092A7AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				55A4EB232A40B3520092A7AD /* LoginViewModel.swift */,
+				559855A32A4FE0070031F06F /* UsersViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				55A4EB252A40B3A30092A7AD /* LoginModel.swift */,
+				5598559F2A4FDF400031F06F /* UsersModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,7 +184,9 @@
 				55A4EB262A40B3A40092A7AD /* LoginModel.swift in Sources */,
 				55A4EB132A40B2E20092A7AD /* JSON_swiftUIApp.swift in Sources */,
 				55A4EB2A2A40BA7B0092A7AD /* Home.swift in Sources */,
+				559855A42A4FE0070031F06F /* UsersViewModel.swift in Sources */,
 				55A4EB242A40B3520092A7AD /* LoginViewModel.swift in Sources */,
+				559855A02A4FDF400031F06F /* UsersModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,27 +10,32 @@ import SwiftUI
 struct Home: View {
     
     @EnvironmentObject var login: LoginViewModel
+    @StateObject var users = UsersViewModel()
     
     var body: some View {
         NavigationView {
-            Text("Welcome!")
-                .navigationTitle("JSON View")
-                .navigationBarItems(leading: Button(action: {
-                    
-                }, label: {
-                    Text("Next")
-                }), trailing: Button(action: {
-                    UserDefaults.standard.removeObject(forKey: "session")
-                    login.authenticated = 0
-                }, label: {
-                        Text("Logout")
-                }))
+            if users.dataModel.isEmpty{
+                ProgressView()
+            }else{
+                List(users.dataModel, id: \.id){ item in
+                    VStack(alignment: .leading){
+                        Text("\(item.username) - \(item.name)")
+                        Text(item.email)
+                    }
+                } .navigationBarTitle("JSON View")
+                    .navigationBarItems(leading: Button(action: {
+                        
+                    }, label: {
+                        Text("Next")
+                    }), trailing: Button(action: {
+                        UserDefaults.standard.removeObject(forKey: "session")
+                        login.authenticated = 0
+                    }, label: {
+                            Text("Logout")
+                    }))
+            }
+               
         }
     }
 }
 
-struct Home_Previews: PreviewProvider {
-    static var previews: some View {
-        Home()
-    }
-}
