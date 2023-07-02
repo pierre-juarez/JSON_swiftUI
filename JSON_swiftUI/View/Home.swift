@@ -21,13 +21,12 @@ struct Home: View {
                     VStack(alignment: .leading){
                         Text("\(item.username) - \(item.name)")
                         Text(item.email)
+                        Text("Lat: \(item.address.geo.lat) -  Long: \(item.address.geo.lng)")
                     }
                 } .navigationBarTitle("JSON View")
-                    .navigationBarItems(leading: Button(action: {
-                        
-                    }, label: {
-                        Text("Next")
-                    }), trailing: Button(action: {
+                    .navigationBarItems(leading: NavigationLink("Next", destination: {
+                        ListUsers()
+                    }) , trailing: Button(action: {
                         UserDefaults.standard.removeObject(forKey: "session")
                         login.authenticated = 0
                     }, label: {
