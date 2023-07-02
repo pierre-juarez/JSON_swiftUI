@@ -16,15 +16,17 @@ struct ListUsers: View {
             ProgressView()
         }else{
             List(data.dataModel.data, id: \.id){ item in
-                HStack{
-                    URLImage(url: URL(string: item.avatar)!)
-                        .frame(width: 80, height: 80)
-                        .clipped()
-                        .clipShape(Circle())
-                    
-                    VStack(alignment: .leading){
-                        Text(item.first_name).font(.title)
-                        Text(item.email).font(.subheadline)
+                NavigationLink(destination: DetailUser(id: item.id)) {
+                    HStack{
+                        URLImage(url: URL(string: item.avatar)!)
+                            .frame(width: 80, height: 80)
+                            .clipped()
+                            .clipShape(Circle())
+                        
+                        VStack(alignment: .leading){
+                            Text(item.first_name).font(.title)
+                            Text(item.email).font(.subheadline)
+                        }
                     }
                 }
             }.navigationBarTitle("JSON con images!")
